@@ -1,0 +1,42 @@
+extends index.pug
+
+
+block content
+    div(
+        id="multi-body"
+    )
+        h1="Multi-source Reddit Slideshow"
+        p="Enter the Subreddits you would like to source images from..."
+        form(
+            method="POST"
+            action="/slideshow"
+        )
+            div(
+                id="multifield"
+            )
+                div(
+                    class="multi-textfield"
+                )
+                    input(
+                        type="text"
+                        name="urls[]"
+                    )
+                    input(
+                        type="button"
+                        value=""
+                        class="multi-remove-element"
+                        onClick="removeInput(this);return false;"
+                    )
+            input(
+                type="button"
+                value=""
+                class="multi-add-element"
+                onClick="addInput('multifield');return false;"
+            )
+            input(
+                type="submit"
+                value="Create Slideshow"
+            )
+        script(
+            src="/static/js/multiform.js"
+        )

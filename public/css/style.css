@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600");
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #0a0123;
+  box-sizing: border-box; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+body {
+  font-size: 16px;
+  font-family: "Source Serif Pro", serif;
+  padding: 0;
+  margin: 0;
+  height: 100%; }
+
+#main {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  padding: 0px;
+  margin: 0px; }
+
+header {
+  width: 100%;
+  padding: 1.5% 0% 1.5% 0%;
+  background-color: #3B41B0;
+  top: 0; }
+  header a {
+    padding-left: 3%;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #fff; }
+
+#nav-bar {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 10px 0 10px;
+  text-align: center; }
+  #nav-bar a {
+    position: relative;
+    margin: 0 8%;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    text-decoration: none;
+    white-space: nowrap; }
+    @media only screen and (max-width: 1230px) {
+      #nav-bar a {
+        padding: 10px 10px;
+        margin: 0 1%; } }
+  #nav-bar .normal-option {
+    background-color: #6653C6;
+    color: #fff;
+    transition: background-color .5s; }
+  #nav-bar .normal-option:hover {
+    background-color: #422B82; }
+  #nav-bar .github-option {
+    background-color: #52A437;
+    background: #52A437;
+    background: -webkit-linear-gradient(#52A437, #1D5838);
+    background: -o-linear-gradient(#52A437, #1D5838);
+    background: -moz-linear-gradient(#52A437, #1D5838);
+    background: linear-gradient(#52A437, #1D5838);
+    color: #fff;
+    border-radius: 6px;
+    transition: background-color; }
+  #nav-bar .github-option:hover {
+    background-color: #1D5838;
+    background: #1D5838; }
+  #nav-bar .github-option::before {
+    content: '';
+    color: transparent;
+    position: absolute;
+    left: 1%;
+    right: 3%;
+    top: 6%;
+    width: 96%;
+    height: 75%;
+    border-radius: 6px; }
+
+#index-body {
+  font-family: "Source Serif Pro", serif;
+  padding-bottom: 200px;
+  margin-bottom: 5%;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 10%;
+  background-color: #fff; }
+  #index-body input[type=text] {
+    width: 36%;
+    padding: 12px 20px;
+    box-sizing: border-box; }
+  #index-body input[type=submit] {
+    background-color: #52A437;
+    border: none;
+    color: #fff;
+    padding: 16px 32px;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 1s, color 1s; }
+  #index-body input[type=submit]:hover {
+    background-color: #1D5838; }
+
+#multi-body {
+  font-family: "Source Serif Pro", serif;
+  padding-bottom: 200px;
+  width: 100%;
+  text-align: center;
+  padding-top: 10%;
+  background-color: #fff; }
+  #multi-body input[type=text] {
+    width: 36%;
+    padding: 12px 20px;
+    margin: 10px 10px;
+    box-sizing: border-box; }
+  #multi-body input[type=submit] {
+    background-color: #52A437;
+    border: none;
+    color: #fff;
+    padding: 16px 32px;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 1s, color 1s; }
+  #multi-body input[type=submit]:hover {
+    background-color: #1D5838; }
+  #multi-body input.multi-remove-element {
+    background-image: url("/static/svg/minus.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 30px;
+    height: 30px;
+    border: none; }
+  #multi-body input.multi-add-element {
+    background-image: url("/static/svg/plus.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 30px;
+    height: 30px;
+    border: none; }
+
+#slideshow-body {
+  align-content: center;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative; }
+  #slideshow-body .slideshow-icon-button {
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100%;
+    color: #fff;
+    fill: #fff; }
+  #slideshow-body #slideshow-close-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image: url("/static/svg/close.svg");
+    font-size: 0; }
+  #slideshow-body #slideshow-image {
+    height: 99vh; }
+  #slideshow-body #slideshow-title {
+    position: absolute;
+    font-size: 2em;
+    bottom: 10vh;
+    text-align: center;
+    width: 100%; }
+  #slideshow-body #slideshow-left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border: 0px solid black;
+    background-image: url("/static/svg/left.svg");
+    background-color: transparent; }
+  #slideshow-body #slideshow-right {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    border: 0px solid black;
+    background-image: url("/static/svg/right.svg");
+    background-color: transparent; }
+  #slideshow-body #slideshow-options-button {
+    transition: bottom .4s;
+    position: absolute;
+    bottom: 10px;
+    font-size: 0;
+    background-image: url("/static/svg/top.svg"); }
+  #slideshow-body #slideshow-options-bar {
+    max-height: 0;
+    transition: max-height 1s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #3B41B0; }
+    #slideshow-body #slideshow-options-bar .slideshow-option label {
+      color: #fff; }
+    #slideshow-body #slideshow-options-bar .slideshow-option input {
+      width: 36%;
+      padding: 5px 10px;
+      margin: 5px 5px; }
+    #slideshow-body #slideshow-options-bar #slideshow-prior-entriesbox {
+      width: 25%;
+      height: 100px;
+      margin: 10px auto;
+      padding: 10px 10px;
+      word-break: break-all;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      background-color: #fff; }
+      #slideshow-body #slideshow-options-bar #slideshow-prior-entriesbox a {
+        padding-left: 5px; }
+
+footer {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  padding: 20px 0 0px 0;
+  background-color: #1F194D;
+  color: #fff; }
+  footer a {
+    color: #fff; }
+  footer a:visited {
+    color: #fff; }
+  footer div {
+    text-align: right;
+    margin-right: 100px; }
+    footer div a {
+      padding: 0 2%; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,108 @@
+doctype html
+html
+    head
+        include includes/head.pug
+    body
+        div(
+            id="slideshow-body"
+        )
+            a(
+                id="slideshow-close-button"
+                class="slideshow-icon-button"
+                href="/"
+            )="close"
+
+            div(
+                id="slideshow-content"
+            )
+                input(
+                    id="slideshow-left"
+                    class="slideshow-icon-button"
+                    type="button"
+                )
+
+                img(
+                    id="slideshow-image"
+                    src="/static/images/placeholder.png"
+                )
+
+                p(
+                    id="slideshow-title"
+                )="Title"
+
+                input(
+                    id="slideshow-right"
+                    class="slideshow-icon-button"
+                    type="button"
+                )
+
+            a(
+                id="slideshow-options-button"
+                class="slideshow-icon-button"
+                onClick="toggleOptionsMenu()"
+            )="options"
+
+            nav(
+                id="slideshow-options-bar"
+            )
+                div(
+                    class="slideshow-option"
+                )
+                    label="Current Image Url: "
+                    input(
+                        type="text"
+                        placeholder="Current Url"
+                    )
+                div(
+                    class="slideshow-option"
+                )
+                    label="Auto-Next-Delay(s): "
+                    input(
+                        type="text"
+                        placeholder="Time between moving to the next image"
+                    )
+                div(
+                    class="slideshow-option"
+                )
+                    label="Auto-Next: "
+                    input(
+                        type="checkbox"
+                        placeholder=""
+                    )
+
+
+                div(
+                    class="slideshow-option"
+                )
+                    label="Show title: "
+                    input(
+                        type="checkbox"
+                        placeholder=""
+                    )
+                
+
+                div(
+                    class="slideshow-option"
+                )
+                    label="Prior Entries: "
+                    div(
+                        id="slideshow-prior-entriesbox"
+                    )
+                        a="1"
+                        a="2"
+                        a="3"
+                        a="4"
+                        a="5"
+                        a="6"
+                        a="7"
+                        a="8"
+                        a="9"
+                        a="10"
+                        a="12"
+                        a="13"
+                        a="14"
+                        a="15"
+        script.
+            var urls = !{JSON.stringify(urls)};
+        script(src="/static/js/jquery.js")
+        script(src="/static/js/slideshow.js")

@@ -1,0 +1,37 @@
+doctype html
+html
+    head
+        include includes/head.pug
+    body
+        div(
+            id="main"
+            class="content"
+        )
+            include includes/header.pug
+
+            include includes/nav.pug
+
+            section(
+                class="content"
+            )
+                block content
+                    div(
+                        id="index-body"
+                    )
+                        h1="Create a Reddit Slideshow"
+                        form(
+                            method="POST"
+                            action="/slideshow"
+                        )
+                            input(
+                                type="text"
+                                name="urls[]"
+                                placeholder="Subreddit url..."
+                            )
+                            input(
+                                type="submit"
+                                value="Load Slideshow"
+                            )
+                        p="Powered by NodeJS, JQuery"
+
+            include includes/footer.pug

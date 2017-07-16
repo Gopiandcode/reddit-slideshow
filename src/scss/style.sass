@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600')
+$font-stack:  'Source Serif Pro', serif
+
+// Color scheme
+$blue-highlight: #3B41B0
+$blue-accent: #1F194D
+$blue-background: #0a0123
+$blue-light-highlight: #3d5ecc
+$color-text: #fff
+
+$green-highlight: #52A437
+$green-accent: #1D5838
+
+$purple-highlight: #6653C6
+$purple-accent: #422B82
+
+$base-font-size: 16px
+
+
+// Screen size rules
+$break-medium: 1230px
+
+html
+  height: 100%
+  width: 100%
+  background-color: $blue-background
+  box-sizing: border-box
+
+*,
+*::before,
+*::after
+  box-sizing: inherit
+
+body
+  font-size: $base-font-size
+  font-family: $font-stack
+  padding: 0
+  margin: 0
+  height: 100%
+
+#main 
+    position: relative
+    width: 100%
+    min-height: 100%
+    padding: 0px
+    margin: 0px
+
+
+header
+  width: 100%
+  padding: 1.5% 0% 1.5% 0%
+  background-color: $blue-highlight
+  top: 0
+
+  a
+    padding-left: 3%
+    font-size: 2.5em
+    font-weight: 600
+    color: $color-text
+
+#nav-bar
+  margin-left: auto
+  margin-right: auto
+  padding: 20px 10px 0 10px
+  text-align: center
+  a
+    position: relative
+    margin: 0 8%
+    padding: 10px 30px
+    border-radius: 10px
+    background-color: $color-text
+    text-decoration: none
+    white-space: nowrap;
+    @media only screen and (max-width: $break-medium) 
+      padding: 10px 10px
+      margin: 0 1%
+
+  
+  .normal-option
+    background-color: $purple-highlight
+    color: $color-text
+    transition: background-color .5s
+
+  .normal-option:hover
+    background-color: $purple-accent
+
+  .github-option
+    background-color: $green-highlight
+    background: $green-highlight // For browsers that do not support gradients */
+    background: -webkit-linear-gradient($green-highlight, $green-accent) // For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($green-highlight, $green-accent)      // For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($green-highlight, $green-accent)    // For Firefox 3.6 to 15 */
+    background: linear-gradient($green-highlight, $green-accent)         // Standard syntax */
+    color: $color-text
+    border-radius: 6px
+    transition: background-color
+  .github-option:hover
+    background-color: $green-accent
+    background: $green-accent
+
+  .github-option::before
+    content: ''
+    color: transparent
+    position: absolute
+    left: 1%
+    right: 3%
+    top: 6%
+    width: 96%
+    height: 75%
+    border-radius: 6px
+    //border: 3px solid $color-text
+
+#index-body
+  font-family: $font-stack
+  padding-bottom: 200px 
+  margin-bottom: 5%
+  width: 100%
+  height: 100%
+  text-align: center
+  padding-top: 10% 
+  background-color: #fff
+
+  input[type=text]
+    width: 36%
+    padding: 12px 20px
+    box-sizing: border-box
+  
+  input[type=submit]
+    background-color: $green-highlight
+    border: none
+    color: $color-text
+    padding: 16px 32px
+    margin-left: 10px
+    text-decoration: none
+    border-radius: 10px
+    cursor: pointer
+    transition: background-color 1s, color 1s
+
+  input[type=submit]:hover
+    background-color: $green-accent
+
+#multi-body
+  font-family: $font-stack
+  padding-bottom: 200px
+  width: 100%
+  text-align: center
+  padding-top: 10% 
+  background-color: #fff
+
+  input[type=text]
+    width: 36%
+    padding: 12px 20px
+    margin: 10px 10px
+    box-sizing: border-box
+  
+  input[type=submit]
+    background-color: $green-highlight
+    border: none
+    color: $color-text
+    padding: 16px 32px
+    margin-left: 10px
+    text-decoration: none
+    border-radius: 10px
+    cursor: pointer
+    transition: background-color 1s, color 1s
+
+  input[type=submit]:hover
+    background-color: $green-accent
+
+  input.multi-remove-element
+    background-image: url('/static/svg/minus.svg') 
+    background-repeat: no-repeat;
+    background-position: 50% 50%
+    width: 30px
+    height: 30px
+    border: none
+  
+  input.multi-add-element
+    background-image: url('/static/svg/plus.svg')
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    width: 30px
+    height: 30px
+    border: none
+      
+
+#slideshow-body
+  align-content: center
+  text-align: center
+  overflow: hidden
+  width: 100%
+  height: 100%
+  position: relative
+    
+  .slideshow-icon-button
+    width: 30px
+    height: 30px
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-size: 100%
+    color: $color-text
+    fill: $color-text
+
+  #slideshow-close-button
+    position: absolute
+    right: 0
+    top: 0
+    background-image: url('/static/svg/close.svg')
+    font-size: 0
+
+  #slideshow-content
+
+  #slideshow-image
+    height: 99vh
+      
+
+  #slideshow-title
+    position: absolute
+    font-size: 2em
+    bottom: 10vh
+    text-align: center
+    width: 100%
+
+
+  #slideshow-left
+    position: absolute
+    top: 50%
+    left: 0
+    border: 0px solid black
+    background-image: url('/static/svg/left.svg')
+    background-color: transparent
+
+  #slideshow-right
+    position: absolute
+    top: 50%
+    right: 0
+    border: 0px solid black
+    background-image: url('/static/svg/right.svg')
+    background-color: transparent
+
+  #slideshow-options-button
+    transition: bottom .4s
+    position: absolute
+    bottom: 10px
+    font-size: 0
+    background-image: url('/static/svg/top.svg')
+
+  #slideshow-options-bar
+    max-height: 0
+    transition: max-height 1s
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: $blue-highlight
+    .slideshow-option
+      label
+        color: $color-text
+
+      input
+        width: 36%
+        padding: 5px 10px
+        margin: 5px 5px
+
+    #slideshow-prior-entriesbox
+      width: 25%
+      height: 100px
+      margin: 10px auto
+      padding: 10px 10px
+      word-break: break-all
+      overflow-y: scroll
+      overflow-x: hidden
+      background-color: $color-text
+      
+      a
+        padding-left: 5px
+
+footer
+  position: absolute
+  width: 100%
+  height: 50px
+  bottom: 0
+  left: 0
+  padding: 20px 0 0px 0
+  background-color: $blue-accent 
+  color: $color-text
+
+  a
+    color: $color-text
+  a:visited
+    color: $color-text
+  
+  div 
+    text-align: right
+    margin-right: 100px
+
+    a
+      padding: 0 2%
