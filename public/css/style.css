@@ -172,10 +172,11 @@ header {
     height: 99vh; }
   #slideshow-body #slideshow-title {
     position: absolute;
-    font-size: 2em;
+    font-size: 1em;
     bottom: 10vh;
     text-align: center;
-    width: 100%; }
+    width: 100%;
+    color: #fff; }
   #slideshow-body #slideshow-left {
     position: absolute;
     top: 50%;

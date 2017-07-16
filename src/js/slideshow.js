@@ -20,10 +20,82 @@ function toggleOptionsMenu() {
     }
 }
 
+var prior_item = -1;
 var current_item = -1;
 var links_added = 0;
 
+function updateCurrent() {
+    if(current_item > data_set.length || current_item === -1) return;
+    var data = data_set[current_item];
+    console.log("Setting image url to " + data.img + ", current_item=" + current_item);
+    $('#slideshow-image').attr("src", data.img);
+    $('#slideshow-title').text(data.title);
+    $('#slideshow-url').attr("value", data.url);
+    if(prior_item !== -1) {
+        $('#slideshow-prior-entriesbox a:nth-child('+(prior_item + 1) + ')').css({
+            "color": "#000",
+            "font-weight": "400"
+        });
+    }
+
+    $('#slideshow-prior-entriesbox a:nth-child(' + (current_item + 1) + ')').css({
+        "color": "#3B41B0",
+        "font-weight": "600"
+    });
+
+}
+
+
+function nextImage() {
+    prior_item = current_item;
+    current_item++;
+    if(current_item > data_set.length) {
+        if(data_set.length !== 0) {
+            current_item = current_item % data_set.length;
+        } else {
+            current_item = -1;
+        }
+    }
+
+    updateCurrent();
+}
+
+function priorImage() {
+    prior_item = current_item;
+    current_item--;
+    if(current_item < 0) {
+        if(prior_item === -1) {
+            current_item = -1;
+        }
+        else current_item = data_set.length-1;
+    }
+
+    updateCurrent();
+}
+
+function setCurrent(pos) {
+    prior_item = current_item;
+    current_item = pos;
+    updateCurrent();
+}
+
 function updateListing(){
+    var data_ref = $('#slideshow-prior-entriesbox');
+    // First check if the current item has to be updated
+    if(current_item === -1 && links_added !== 0) {
+        current_item = 0;
+        updateCurrent();
+    }
+
+    while(links_added !== data_set.length) {
+        links_added++;
+        var a = $("<a>" + links_added + "</a>");
+
+        a.attr("onClick", "setCurrent(" + (links_added-1) + "); return false;");
+
+        a.appendTo(data_ref);
+
+    }
 
     console.log(JSON.stringify(data_set));
 }

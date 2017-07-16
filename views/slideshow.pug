@@ -19,6 +19,7 @@ html
                     id="slideshow-left"
                     class="slideshow-icon-button"
                     type="button"
+                    onClick="priorImage()"
                 )
 
                 img(
@@ -34,6 +35,7 @@ html
                     id="slideshow-right"
                     class="slideshow-icon-button"
                     type="button"
+                    onClick="nextImage()"
                 )
 
             a(
@@ -52,6 +54,7 @@ html
                     input(
                         type="text"
                         placeholder="Current Url"
+                        id="slideshow-url"
                     )
                 div(
                     class="slideshow-option"
@@ -60,6 +63,7 @@ html
                     input(
                         type="text"
                         placeholder="Time between moving to the next image"
+                        id="slideshow-delay"
                     )
                 div(
                     class="slideshow-option"
@@ -88,20 +92,6 @@ html
                     div(
                         id="slideshow-prior-entriesbox"
                     )
-                        a="1"
-                        a="2"
-                        a="3"
-                        a="4"
-                        a="5"
-                        a="6"
-                        a="7"
-                        a="8"
-                        a="9"
-                        a="10"
-                        a="12"
-                        a="13"
-                        a="14"
-                        a="15"
         script.
             var urls = !{JSON.stringify(urls)};
         script(src="/static/js/jquery.js")
