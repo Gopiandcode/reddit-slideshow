@@ -133,14 +133,14 @@ header {
   #multi-body input[type=submit]:hover {
     background-color: #1D5838; }
   #multi-body input.multi-remove-element {
-    background-image: url("/static/svg/minus.svg");
+    background-image: url("/svg/minus.svg");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     width: 30px;
     height: 30px;
     border: none; }
   #multi-body input.multi-add-element {
-    background-image: url("/static/svg/plus.svg");
+    background-image: url("/svg/plus.svg");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     width: 30px;
@@ -166,7 +166,7 @@ header {
     position: absolute;
     right: 0;
     top: 0;
-    background-image: url("/static/svg/close.svg");
+    background-image: url("/svg/close.svg");
     font-size: 0; }
   #slideshow-body #slideshow-image {
     height: 99vh; }
@@ -182,21 +182,21 @@ header {
     top: 50%;
     left: 0;
     border: 0px solid black;
-    background-image: url("/static/svg/left.svg");
+    background-image: url("/svg/left.svg");
     background-color: transparent; }
   #slideshow-body #slideshow-right {
     position: absolute;
     top: 50%;
     right: 0;
     border: 0px solid black;
-    background-image: url("/static/svg/right.svg");
+    background-image: url("/svg/right.svg");
     background-color: transparent; }
   #slideshow-body #slideshow-options-button {
     transition: bottom .4s;
     position: absolute;
     bottom: 10px;
     font-size: 0;
-    background-image: url("/static/svg/top.svg"); }
+    background-image: url("/svg/top.svg"); }
   #slideshow-body #slideshow-options-bar {
     max-height: 0;
     z-index: 0;
