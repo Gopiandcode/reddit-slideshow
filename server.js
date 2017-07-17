@@ -73,7 +73,8 @@ app.post('/slideshow', function(req,res){
     else
         res.render('slideshow', {
             title: "Slideshow - Gopiandcode's Reddit Slideshow",
-            urls: urls
+            urls: urls,
+            client_id: config["client-id"]
         });
 })
 
@@ -91,7 +92,8 @@ app.get('/slideshow', function(req, res) {
     else
         res.render('slideshow', {
             title: "Slideshow - Gopiandcode's Reddit Slideshow",
-            urls: urls
+            urls: urls,
+            client_id: config["client-id"]
         });
 });
 

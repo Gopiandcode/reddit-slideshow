@@ -1,3 +1,4 @@
 {
-    "build-mode": "PRODUCTION" 
+    "build-mode": "PRODUCTION",
+    "client-id": "<YOUR-CLIENT-ID-HERE>"
 }
