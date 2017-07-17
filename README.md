@@ -7,7 +7,7 @@ Most of the development time was spent on the HTML styling. Obviously, as it was
 compatible with all browsers. 
 Hey, what can I say? I'm not a web developer.
 
-![FinalProduct](https://raw.githubusercontent.com/Gopiandcode/reddit-slideshow/master/Screens.PNG)
+![FinalProduct](https://raw.githubusercontent.com/Gopiandcode/reddit-slideshow/master/Screens.png)
 
 Supports multiple sources, auto-forward, url-based parameters - as in like how redditp does it whereby if the base url from
 a reddit url is replaced with the server host, the application can create a slideshow out of the content that would have been
@@ -34,7 +34,7 @@ some reason it doesn't work on the version of firefox I'm using. So I'm just abo
 As with all projects, development started with a diagram. As the complexity of the buisness logic would be relatively simple in this
 application, the focus was on UI. After some iniial considerations, I came up with this....
 
-![InitialDiagram](https://raw.githubusercontent.com/Gopiandcode/reddit-slideshow/master/UI_Design.PNG)
+![InitialDiagram](https://raw.githubusercontent.com/Gopiandcode/reddit-slideshow/master/UI_Design.png)
 
 
 ### Step 2: HTML Styling
@@ -42,7 +42,7 @@ Following that, the next day was spent styling the pages I would use, to an exte
 professional. Once completed, I had pages as such.
 
 
-![WebPages](https://raw.githubusercontent.com/Gopiandcode/reddit-slideshow/master/Screens.PNG)
+![WebPages](https://raw.githubusercontent.com/Gopiandcode/reddit-slideshow/master/Screens.png)
 
 
 ### Step 3: Backend Logic
