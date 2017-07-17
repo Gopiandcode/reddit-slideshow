@@ -42,7 +42,7 @@ Following that, the next day was spent styling the pages I would use, to an exte
 professional. Once completed, I had pages as such.
 
 
-![WebPages](https://raw.githubusercontent.com/Gopiandcode/reddit-slideshow/master/Screens.pmg)
+![WebPages](https://raw.githubusercontent.com/Gopiandcode/reddit-slideshow/master/Screens.png)
 
 
 ### Step 3: Backend Logic
