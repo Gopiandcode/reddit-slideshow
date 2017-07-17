@@ -1,6 +1,6 @@
 # reddit-slideshow
 ## A simple little Reddit Slideshow...
-Running at:
+Running at: http://redditslideshow.azurewebsites.net/
 
 Just a little project I came up with for fun. I know many of these already exist, but it seemed like a fun challenge.
 Most of the development time was spent on the HTML styling. Obviously, as it was all handcrafted, it's not 100% 
