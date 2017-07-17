@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const config = require('./config/settings.json');
+const config = require(__dirname + '/config/settings.json');
 const url = require('url');
-const jsonValidation = require('./lib/jsonValidation');
+const jsonValidation = require(__dirname + '/lib/jsonValidation');
 var port = process.env.port || 8080;
 const app = express();
 
