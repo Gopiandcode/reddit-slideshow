@@ -59,6 +59,7 @@ app.post('/slideshow', function(req,res){
     console.log(req.body);
     console.log(JSON.stringify(req.body));
     var urls = jsonValidation.sanitize(req.body.urls);
+    console.log(urls);
 
     if(!urls)
         urls = [];
