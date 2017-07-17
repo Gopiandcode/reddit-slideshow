@@ -31,8 +31,6 @@ var delay_time = 5000;
 function updateCurrent() {
     if(current_item > data_set.length || current_item === -1) return;
     var data = data_set[current_item];
-    console.log(current_item);
-    console.log("Setting image url to " + data.img + ", current_item=" + current_item);
     $('#slideshow-image').attr("src", data.img);
     $('#slideshow-title').text(data.title);
     $('#slideshow-url').attr("value", data.url);
@@ -53,7 +51,6 @@ function updateCurrent() {
 }
 
 function toggleTitleVisibility(checkbox) {
-    console.log("Checked out!" + checkbox.checked);
     if(!checkbox.checked){
         $('#slideshow-title').css({
             "font-size": "0"
@@ -69,7 +66,6 @@ function setTimeValue(value) {
     var time_val = Number(value);
     if(time_val < 0) return;
     delay_time = time_val * 1000;
-    console.log("Setting delay time to " + delay_time);
     if(interval_id !== null) {
         clearInterval(interval_id);
         interval_id = null;
@@ -89,7 +85,6 @@ function toggleAutoForward(checkbox) {
         interval_id = null;
     }
 
-    console.log("Int_id: " + interval_id + ", checkbox.checked: " + checkbox.checked);
 }
 
 function nextImage() {
@@ -143,7 +138,6 @@ function updateListing(){
 
     }
 
-    console.log(JSON.stringify(data_set));
 }
 
 function retrieveData(url) {
