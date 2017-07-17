@@ -3,10 +3,10 @@ const bodyParser = require('body-parser');
 const config = require('./config/settings.json');
 const url = require('url');
 const jsonValidation = require('./lib/jsonValidation');
-
+var port = process.env.port || 8080;
 const app = express();
 
-app.use('/static', express.static('public'));
+app.use('/static', express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 app.set('view engine', 'pug');
@@ -101,5 +101,5 @@ if(config["build-mode"] === "DEBUG") {
     app.listen(3000);
     console.log("Running DEBUG Reddit Slideshow app at localhost on port 3000...");
 } else {
-    module.exports = app;
+    app.listen(port);
 }

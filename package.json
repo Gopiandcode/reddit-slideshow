@@ -2,7 +2,7 @@
   "name": "redditslideshow",
   "version": "0.0.1",
   "description": "A simple application to slideshow reddit pictures",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "grunt test"
   },
