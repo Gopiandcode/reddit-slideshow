@@ -6,6 +6,7 @@ function toggleOptionsMenu() {
     var button = document.getElementById('slideshow-options-button');
     if(open) {
         options.style["max-height"]="0"
+        options.style["z-index"]="0"
         button.style.bottom = "10px"
         button.style.transition = "bottom .48s"
         button.style.transitionDelay = ".4s"
@@ -13,6 +14,7 @@ function toggleOptionsMenu() {
         open = false;
     } else {
         options.style["max-height"]="50vw"
+        options.style["z-index"]="1"
         button.style.bottom = "35vh"
         button.style.transition = "bottom .4s"
         button.style.backgroundImage = "url('/static/svg/bottom.svg')"
@@ -23,14 +25,18 @@ function toggleOptionsMenu() {
 var prior_item = -1;
 var current_item = -1;
 var links_added = 0;
+var interval_id = null;
+var delay_time = 5000;
 
 function updateCurrent() {
     if(current_item > data_set.length || current_item === -1) return;
     var data = data_set[current_item];
+    console.log(current_item);
     console.log("Setting image url to " + data.img + ", current_item=" + current_item);
     $('#slideshow-image').attr("src", data.img);
     $('#slideshow-title').text(data.title);
     $('#slideshow-url').attr("value", data.url);
+    console.log("Removing decoration of "  + prior_item + " and adding decoration of " + current_item );
     if(prior_item !== -1) {
         $('#slideshow-prior-entriesbox a:nth-child('+(prior_item + 1) + ')').css({
             "color": "#000",
@@ -39,19 +45,59 @@ function updateCurrent() {
     }
 
     $('#slideshow-prior-entriesbox a:nth-child(' + (current_item + 1) + ')').css({
-        "color": "#3B41B0",
+        "color": "#3d5ecc",
         "font-weight": "600"
     });
 
+
 }
 
+function toggleTitleVisibility(checkbox) {
+    console.log("Checked out!" + checkbox.checked);
+    if(!checkbox.checked){
+        $('#slideshow-title').css({
+            "font-size": "0"
+        })
+    } else {
+        $('#slideshow-title').css({
+            "font-size": "1em"
+        })
+    }
+}
+function setTimeValue(value) {
+    if(!value) return;
+    var time_val = Number(value);
+    if(time_val < 0) return;
+    delay_time = time_val * 1000;
+    console.log("Setting delay time to " + delay_time);
+    if(interval_id !== null) {
+        clearInterval(interval_id);
+        interval_id = null;
+        interval_id = setInterval(nextImage, delay_time);        
+    }
+}
+
+function toggleAutoForward(checkbox) {
+    if(checkbox.checked) {
+        if(interval_id !== null) {
+            clearInterval(interval_id);
+            interval_id = null;
+        }
+        interval_id = setInterval(nextImage, delay_time); 
+    } else {
+        clearInterval(interval_id);
+        interval_id = null;
+    }
+
+    console.log("Int_id: " + interval_id + ", checkbox.checked: " + checkbox.checked);
+}
 
 function nextImage() {
     prior_item = current_item;
     current_item++;
-    if(current_item > data_set.length) {
+    if(current_item >= data_set.length) {
         if(data_set.length !== 0) {
-            current_item = current_item % data_set.length;
+            current_item = 0;
         } else {
             current_item = -1;
         }
